@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinCource</string>
+    <string name="welcome_to_kotlin">Welcome to Kotlin</string>
+</resources>
