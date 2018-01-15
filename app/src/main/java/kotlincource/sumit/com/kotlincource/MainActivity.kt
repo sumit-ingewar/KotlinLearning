@@ -27,37 +27,115 @@ class MainActivity : AppCompatActivity() {
         //kotlinArray()
         //kotlinArrayList()
         //kotlinHashMap()
+        //println(functionInKotlin("Sumit" , "Ingewar"))
+        //println(functionInKotlin("Sumit"))
+        //kotlinClassFunctions()
+        //kotlinConstructor()
+        //kotlinInheritance()
+        //kotlinOverriding()
+        kotlinTypeCasting()
+    }
 
-        println(functionInKotlin("Sumit" , "Ingewar"))
-        println(functionInKotlin("Sumit"))
+    // example of type casting and polymorphism
+    private fun kotlinTypeCasting() {
+        var n1: Int = 10
+        var n2 = 20
+
+        var addMult = AddMult1()
+        println("Add id ${addMult.add(n1, n2)}")
+        println("Mult is ${addMult.mult(n1, n2)}")
+
+        var subDiv = DivSub1()
+
+        println("Sub id ${subDiv.sub(n1, n2)}")
+        println("Div is ${subDiv.div(n2, n1)}")
+
+        // here object of DivSub1 is type casted to AddMult1 , since DivSub1
+        // also has add method , it will execute the method from DivSub1 only
+
+        var subDiv2 = DivSub1() as AddMult1
+        println("Inherited Sum is ${subDiv2.add(n1, n2)}")
     }
 
 
+    // kotlin overriding
+
+    private fun kotlinOverriding() {
+        var n1: Int = 10
+        var n2 = 20
+
+        var addMult = AddMult1()
+        println("Add id ${addMult.add(n1, n2)}")
+        println("Mult is ${addMult.mult(n1, n2)}")
+
+        var subDiv = DivSub1()
+
+        println("Sub id ${subDiv.sub(n1, n2)}")
+        println("Div is ${subDiv.div(n2, n1)}")
+
+
+        println("Inherited Sum is ${subDiv.add(n1, n2)}")
+    }
+
+    // kotlin inheritance
+    private fun kotlinInheritance() {
+        var n1: Int = 10
+        var n2 = 20
+
+        var addMult = AddMult()
+        println("Add id ${addMult.add(n1, n2)}")
+        println("Mult is ${addMult.mult(n1, n2)}")
+
+        var subDiv = DivSub()
+
+        println("Sub id ${subDiv.sub(n1, n2)}")
+        println("Div is ${subDiv.div(n2, n1)}")
+
+
+        println("Inherited Sum is ${subDiv.add(n1, n2)}")
+    }
+
+    // constructor
+    private fun kotlinConstructor() {
+
+        var sumitCar = CarConstructor("Jaguar", "Sumit")
+        var asmiCar = CarConstructor("Honda City")
+    }
+
+    //  class functions
+
+    private fun kotlinClassFunctions() {
+
+        var sumitCar = Car("Jaguar", "Sumit")
+        var asmiCar = Car("Honda City", "Asmi")
+
+        println("Sumit's Car : ${sumitCar.brand}")
+        println("Asmi's Car : ${asmiCar.brand}")
+    }
 
     // function in kotlin
 
-    private fun functionInKotlin(s1:String , s2:String="Ingewar"):String{
+    private fun functionInKotlin(s1: String, s2: String = "Ingewar"): String {
 
-        return s1+s2
+        return s1 + s2
 
     }
 
 
-
     // kotlin HashMap
-    private fun kotlinHashMap(){
+    private fun kotlinHashMap() {
 
-        var map= HashMap<Int , String>()
+        var map = HashMap<Int, String>()
         map.put(1, "Sumit")
         map.put(2, "Asmi")
         map.put(3, "Mom")
 
-        println("Mom's name is "+map.get(3))
+        println("Mom's name is " + map.get(3))
 
 
-        map.put(3,"Mit")
+        map.put(3, "Mit")
 
-        for(key in map.keys){
+        for (key in map.keys) {
 
             println(map.get(key))
         }
@@ -72,15 +150,15 @@ class MainActivity : AppCompatActivity() {
         arrayList.add("Asmi")
         arrayList.add("Mom")
 
-        println("Wife's name is "+arrayList.get(1))
+        println("Wife's name is " + arrayList.get(1))
 
-        for (element in arrayList){
+        for (element in arrayList) {
             println(element)
         }
 
         arrayList.add(0, "Mit")
 
-        for (index in 0..arrayList.size-1){
+        for (index in 0..arrayList.size - 1) {
             println(arrayList.get(index))
         }
 
