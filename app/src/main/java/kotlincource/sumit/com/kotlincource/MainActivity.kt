@@ -33,8 +33,36 @@ class MainActivity : AppCompatActivity() {
         //kotlinConstructor()
         //kotlinInheritance()
         //kotlinOverriding()
-        kotlinTypeCasting()
+        //    kotlinTypeCasting()
+        kotlinExtensions()
     }
+
+    // kotlin extensions
+
+    private fun kotlinExtensions() {
+
+
+        var arrayList = ArrayList<String>()
+
+        arrayList.add("Sumit")
+        arrayList.add("Asmita")
+        arrayList.add("Mom")
+        println(arrayList)
+        arrayList.swap(1,2)
+
+        println("After swap $arrayList")
+
+    }
+
+    fun ArrayList<String>.swap(i1: Int, i2: Int) {
+
+        var temp = this.get(i1);
+        this.set(i1, this.get(i2))
+        this.set(i2, temp)
+
+
+    }
+
 
     // example of type casting and polymorphism
     private fun kotlinTypeCasting() {
