@@ -35,11 +35,26 @@ class MainActivity : AppCompatActivity() {
         //kotlinOverriding()
         //kotlinTypeCasting()
         //kotlinExtensions()
-        kotlinSingleton()
+        //kotlinSingleton()
+        kotlinThread()
+    }
+
+    // threads
+    private fun kotlinThread() {
+        var thread = UserThread("First");
+        thread.start()
+
+
+        var thread2 = UserThread("Second");
+        thread2.start()
+        thread2.join() /// using join will ensures that code runtime does not move ahead unless
+                        // thread is executed
+
+        println("Thread execution is done")
     }
 
 
-    private fun kotlinSingleton(){
+    private fun kotlinSingleton() {
 
         var o1 = Singleton.instance
         o1.name = "Sumit"
@@ -64,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         arrayList.add("Asmita")
         arrayList.add("Mom")
         println(arrayList)
-        arrayList.swap(1,2)
+        arrayList.swap(1, 2)
 
         println("After swap $arrayList")
 
