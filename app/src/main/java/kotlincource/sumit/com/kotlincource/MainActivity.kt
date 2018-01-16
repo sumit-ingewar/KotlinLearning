@@ -33,8 +33,24 @@ class MainActivity : AppCompatActivity() {
         //kotlinConstructor()
         //kotlinInheritance()
         //kotlinOverriding()
-        //    kotlinTypeCasting()
-        kotlinExtensions()
+        //kotlinTypeCasting()
+        //kotlinExtensions()
+        kotlinSingleton()
+    }
+
+
+    private fun kotlinSingleton(){
+
+        var o1 = Singleton.instance
+        o1.name = "Sumit"
+        println(o1.name)
+
+        var o2 = Singleton.instance
+        println(o2.name)
+
+        var o3 = Singleton.instance
+        println(o3.name)
+
     }
 
     // kotlin extensions
